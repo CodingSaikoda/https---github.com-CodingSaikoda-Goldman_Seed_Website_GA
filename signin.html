@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sign In | Goldman Seed Enterprise</title>
+
+    <link rel="stylesheet" href="style.css?v=6">
+    <script src="script.js?v=16" defer></script>
+</head>
+
+<body class="auth-page">
+
+    <main class="auth-layout">
+
+        <!-- LEFT BRAND PANEL -->
+        <section class="brand-panel">
+
+            <a class="brand" href="home.html">
+                <img
+                    src="images/brand/logo.jpeg"
+                    alt="Goldman Seed Enterprise Logo"
+                    class="brand-logo"
+                >
+
+                <span class="brand-name">
+                    Goldman Seed Enterprise
+                </span>
+            </a>
+
+            <div class="brand-message">
+                <p class="eyebrow">YOUR EVERYDAY FINDS</p>
+
+                <h1>Good things are just a click away.</h1>
+
+                <p>
+                    Discover thoughtful picks for your everyday life,
+                    all in one place.
+                </p>
+            </div>
+
+            <p class="brand-footer">
+                A little easier. A little better. Every day.
+            </p>
+
+        </section>
+
+
+        <!-- RIGHT SIGN-IN PANEL -->
+        <section class="form-panel">
+
+            <!-- Logo for mobile screens -->
+            <a class="brand mobile-brand" href="home.html">
+                <img
+                    src="images/brand/logo.jpeg"
+                    alt="Goldman Seed Enterprise Logo"
+                    class="brand-logo"
+                >
+
+                <span class="brand-name">
+                    Goldman Seed Enterprise
+                </span>
+            </a>
+
+            <div class="form-wrap">
+
+                <!-- WELCOME BACK + BROWSER-STYLE BACK BUTTON -->
+                <div class="welcome-row">
+
+                    <p class="eyebrow">WELCOME BACK</p>
+
+                    <button
+                        type="button"
+                        id="backButton"
+                        class="browser-back-button"
+                        aria-label="Go back to the previous page"
+                    >
+                        ← Back
+                    </button>
+
+                </div>
+
+                <h2>Sign in to your account</h2>
+
+                <p class="subheading">
+                    Enter your details below to continue shopping.
+                </p>
+
+                <form id="signInForm" class="auth-form" novalidate>
+
+                <label for="loginIdentifier">
+                    <span>Email address</span>
+                    <span id="loginIdentifierError" class="field-error" role="alert" aria-live="polite"></span>
+                </label>
+                <input
+                    id="loginIdentifier"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    maxlength="254"
+                    aria-describedby="loginIdentifierError"
+                    required
+                >
+
+                <!-- Password -->
+                <div class="label-row">
+
+                    <label for="password">
+                        <span>Password</span>
+                        <span id="loginPasswordError" class="field-error" role="alert" aria-live="polite"></span>
+                    </label>
+
+                        <button
+                            class="text-button"
+                            id="togglePassword"
+                            type="button"
+                            aria-controls="password"
+                            aria-label="Show password"
+                        >
+                            Show
+                        </button>
+
+                    </div>
+
+                    <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        minlength="12"
+                        maxlength="72"
+                        aria-describedby="loginPasswordError"
+                        required
+                    >
+
+                    <p class="muted-small">Sign-in uses a secure browser session.</p>
+
+                    <!-- Sign-in button -->
+                    <button class="primary-button" type="submit">
+                        Sign In
+                    </button>
+
+                    <!-- Form message -->
+                    <p
+                        id="loginMessage"
+                        class="form-message"
+                        role="alert"
+                        aria-live="polite"
+                    ></p>
+
+                </form>
+
+                <div class="demo-note">
+                    Sign in with your registered email. Administrator access is granted
+                    automatically to authorized accounts. Passwords must contain at least 12 characters.
+                </div>
+
+                <!-- Register link -->
+                <p class="bottom-note">
+                    New to Goldman Seed Enterprise?
+                    <a href="register.html">Create an account</a>
+                </p>
+
+                <p class="bottom-note smaller">
+                    By continuing, you agree to our
+                    <a href="#">Terms</a> and
+                    <a href="#">Privacy Policy</a>.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Products | Goldman Seed Enterprise</title>
+    
+    <link rel="stylesheet" href="style.css?v=9">
+    <script src="script.js?v=16" defer></script>
+</head>
+
+<body class="home-page product-page" id="top">
+
+    <!--region -->
+    <header class="site-header">
+
+        <a class="brand" href="home.html">
+            <img
+                src="images/brand/logo.jpeg"
+                alt="Goldman Seed Enterprise Logo"
+                class="brand-logo"
+            >
+
+            <span class="brand-name">
+                Goldman Seed Enterprise
+            </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="product.html"
+               class="active"
+               aria-current="page">Products</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- Account navigation -->
+        <div class="account-links">
+
+            <a
+                class="account-link"
+                id="homeSignInLink"
+                href="signin.html"
+            >Sign In</a>
+
+            <a
+                class="account-link register-link"
+                id="homeRegisterLink"
+                href="register.html"
+            >Register</a>
+
+            <a
+                class="signout-link"
+                id="homeSignOutLink"
+                href="signout.html"
+                hidden
+            >Sign Out ↗</a>
+
+            <a
+                class="profile-avatar-link"
+                id="homeProfileLink"
+                href="profile.html"
+                aria-label="Edit your account profile"
+                title="Edit your account profile"
+                hidden
+            ><img id="homeProfileAvatar" src="images/brand/logo.jpeg" alt="" aria-hidden="true"></a>
+
+        </div>
+
+    </header>
+    <!--region end-->
+
+    <main class="home-content product-main">
+        <section class="shop-hero">
+            <div>
+                <p class="eyebrow">FRESH FROM SARAWAK</p>
+                <h1>Good food, delivered fresh.</h1>
+                <p>Browse our locally grown produce and add your favourites to the basket.</p>
+            </div>
+            <div class="shop-hero-badge" aria-hidden="true">Fresh<br>Daily</div>
+        </section>
+
+        <section class="shop-toolbar" aria-label="Find products">
+            <label class="shop-search">
+                <span class="visually-hidden">Search products</span>
+                <input id="productSearch" type="search" placeholder="Search fresh produce">
+            </label>
+            <label>
+                <span class="visually-hidden">Filter by category</span>
+                <select id="productCategoryFilter">
+                    <option value="">All categories</option>
+                    <option value="Vegetables">Vegetables</option>
+                    <option value="Fruits">Fruits</option>
+                    <option value="Herbs">Herbs</option>
+                    <option value="Other produce">Other produce</option>
+                </select>
+            </label>
+            <label>
+                <span class="visually-hidden">Sort products</span>
+                <select id="productSort">
+                    <option value="featured">Featured</option>
+                    <option value="price-low">Price: low to high</option>
+                    <option value="price-high">Price: high to low</option>
+                    <option value="name">Name: A to Z</option>
+                </select>
+            </label>
+            <button id="cartToggle" class="basket-button" type="button" aria-expanded="false" aria-controls="cartPanel">
+                Basket <span id="cartCount" class="basket-count">0</span>
+            </button>
+        </section>
+
+        <section id="cartPanel" class="cart-panel" aria-labelledby="cartTitle" hidden>
+            <div class="cart-panel-heading">
+                <h2 id="cartTitle">Your basket</h2>
+                <button id="closeCart" class="cart-close-button" type="button" aria-label="Close basket">×</button>
+            </div>
+            <div id="cartItems" class="cart-items"></div>
+            <div class="cart-summary">
+                <strong>Total</strong>
+                <strong id="cartTotal">RM 0.00</strong>
+            </div>
+            <button id="checkoutButton" class="primary-button checkout-button" type="button">Checkout</button>
+            <p id="cartMessage" class="form-message" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="shop-products" aria-labelledby="shopProductsTitle">
+            <div class="shop-section-heading">
+                <div>
+                    <p class="eyebrow">PICKED FOR YOU</p>
+                    <h2 id="shopProductsTitle">Shop fresh produce</h2>
+                </div>
+                <p id="productResultCount" class="product-result-count"></p>
+            </div>
+            <p id="shopStatus" class="shop-status" role="status" aria-live="polite"></p>
+            <div id="shopProductList" class="shop-grid" aria-live="polite"></div>
+        </section>
+
+        <details class="owner-tools" hidden>
+            <summary>Owner tools · manage database products and categories</summary>
+           
+            <div class="product-management-layout">
+                <section class="product-editor" aria-labelledby="product-editor-title">
+                    <p class="eyebrow">PRODUCT DETAILS</p>
+                    <h2 id="product-editor-title">Add a product</h2>
+                    <form id="productForm" class="product-form">
+                        <label for="productName">Product name</label>
+                        <input id="productName" name="name" type="text" maxlength="50" required>
+
+                        <label for="productCategory">Category</label>
+                        <select id="productCategory" name="category" required>
+                            <option value="">Loading categories...</option>
+                            <option value="__create_category__">+ Create a new category...</option>
+                            <option value="__delete_category__">− Delete a category...</option>
+                        </select>
+
+                        <label for="productDescription">Description</label>
+                        <textarea id="productDescription" name="description" rows="4" maxlength="300" required></textarea>
+
+                        <label for="productPrice">Price (MYR)</label>
+                        <input id="productPrice" name="price" type="number" min="0" step="0.01" required>
+
+                        <label for="productUnit">Selling unit</label>
+                        <input id="productUnit" name="unit" type="text" maxlength="200" placeholder="e.g. per kg" required>
+
+                        <span class="product-image-label">Product image (optional)</span>
+                        <label class="product-image-dropzone" id="productImageDropzone" for="productImage">
+                            <input
+                                id="productImage"
+                                name="image"
+                                class="product-image-file"
+                                type="file"
+                                accept="image/*"
+                                aria-describedby="productImageHelp productImageStatus"
+                            >
+                            <span class="product-image-prompt" id="productImagePrompt">
+                                <strong>Drop an image here</strong>
+                                <span>or click to browse for a photo</span>
+                            </span>
+                            <img class="product-image-preview" id="productImagePreview" alt="Product image preview" hidden>
+                        </label>
+                        <span class="product-image-help" id="productImageHelp">Images are resized and stored on the server; image links are saved in the database.</span>
+                        <p class="product-image-status" id="productImageStatus" role="status" aria-live="polite"></p>
+                        <button class="secondary-button product-image-remove" id="removeProductImage" type="button" hidden>Remove image</button>
+
+                        <div class="product-form-actions">
+                            <button class="primary-button" id="saveProductButton" type="submit">Add product</button>
+                            <button class="secondary-button" id="cancelProductEdit" type="button" hidden>Cancel edit</button>
+                        </div>
+                        <p id="productMessage" class="form-message" role="status" aria-live="polite"></p>
+                    </form>
+
+                    <dialog id="productImageCropDialog" class="category-dialog product-image-crop-dialog" aria-labelledby="product-image-crop-title">
+                        <div class="product-image-crop-content">
+                            <p class="eyebrow">PRODUCT IMAGE</p>
+                            <h3 id="product-image-crop-title">Crop image</h3>
+                            <p class="product-image-crop-help">Drag the image to adjust the square crop, then use the slider to zoom.</p>
+                            <canvas id="productImageCropCanvas" class="product-image-crop-canvas" width="360" height="360" aria-label="Square image crop preview"></canvas>
+                            <label class="product-image-zoom-label" for="productImageCropZoom">Zoom</label>
+                            <input id="productImageCropZoom" class="product-image-crop-zoom" type="range" min="1" max="3" step="0.01" value="1">
+                            <p id="productImageCropStatus" class="form-message" role="status" aria-live="polite"></p>
+                            <div class="category-dialog-actions">
+                                <button class="secondary-button" id="cancelProductImageCrop" type="button">Cancel</button>
+                                <button class="primary-button" id="confirmProductImageCrop" type="button">Use this crop</button>
+                            </div>
+                        </div>
+                    </dialog>
+
+                    <dialog id="categoryDialog" class="category-dialog" aria-labelledby="category-dialog-title">
+                        <form id="categoryForm" class="category-form">
+                            <p class="eyebrow">CATEGORY DETAILS</p>
+                            <h3 id="category-dialog-title">Create a category</h3>
+                            <label for="newCategoryName">Category name</label>
+                            <input
+                                id="newCategoryName"
+                                name="category_name"
+                                type="text"
+                                maxlength="300"
+                                required
+                            >
+                            <p id="categoryMessage" class="form-message" role="alert" aria-live="polite"></p>
+                            <div class="category-dialog-actions">
+                                <button class="secondary-button" id="cancelCategoryButton" type="button">Cancel</button>
+                                <button class="primary-button" id="addCategoryButton" type="submit">Add category</button>
+                            </div>
+                        </form>
+                    </dialog>
+                    <dialog id="deleteCategoryDialog" class="category-dialog" aria-labelledby="delete-category-dialog-title">
+                        <form id="deleteCategoryForm" class="category-form">
+                            <p class="eyebrow">CATEGORY DETAILS</p>
+                            <h3 id="delete-category-dialog-title">Delete a category</h3>
+                            <label for="deleteCategorySelect">Choose a category</label>
+                            <select id="deleteCategorySelect" name="category_id" required></select>
+                            <p class="category-delete-warning">
+                                Categories assigned to products cannot be deleted. Reassign or remove those products first.
+                            </p>
+                            <p id="deleteCategoryMessage" class="form-message" role="alert" aria-live="polite"></p>
+                            <div class="category-dialog-actions">
+                                <button class="secondary-button" id="cancelDeleteCategoryButton" type="button">Cancel</button>
+                                <button class="primary-button danger-button" id="confirmDeleteCategoryButton" type="submit">Delete category</button>
+                            </div>
+                        </form>
+                    </dialog>
+                </section>
+
+                <section class="product-list-section" aria-labelledby="product-list-title">
+                    <div class="product-list-heading">
+                        <p class="eyebrow">YOUR CATALOGUE</p>
+                        <h2 id="product-list-title">Edit product details</h2>
+                    </div>
+                    <div id="productList" class="product-list" aria-live="polite"></div>
+                </section>
+            </div>
+        </details>
+
+        <details id="adminOrderTools" class="owner-tools order-admin-tools" hidden>
+            <summary>Owner tools · review and manage customer orders</summary>
+            <section class="product-list-section order-management" aria-labelledby="adminOrdersTitle">
+                <div class="admin-panel-heading">
+                    <div>
+                        <p class="eyebrow">ADMINISTRATION</p>
+                        <h2 id="adminOrdersTitle">Customer orders</h2>
+                    </div>
+                    <button id="refreshOrders" class="secondary-button" type="button">Refresh orders</button>
+                </div>
+                <p id="adminOrdersStatus" class="form-message" role="status" aria-live="polite"></p>
+                <div id="adminOrdersList" class="admin-record-list" aria-live="polite"></div>
+            </section>
+        </details>
+    </main>
+
+    <!--region =================================
+         COMPANY FOOTER
+    ================================== -->    
+    <footer class="company-footer">
+        <div class="company-footer-inner">
+            <a class="company-footer-brand" href="home.html">
+                <img src="images/brand/logo.jpeg" alt="Goldman Seed Enterprise Logo" class="company-footer-logo">
+                <span class="company-footer-name">
+                    <strong>Goldman Seed Enterprise</strong>
+                    <small>Fresh Produce for a Healthier Sarawak</small>
+                </span>
+            </a>
+            <nav class="company-footer-nav" aria-label="Footer navigation">
+                <a href="home.html">Home</a><span class="footer-separator">|</span>
+                <a href="about.html">About</a><span class="footer-separator">|</span>
+                <a href="product.html">Products</a><span class="footer-separator">|</span>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <!-- Social media -->
+            <div class="company-footer-social">
+
+                <a
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-icon facebook"
+                    aria-label="Facebook"
+                >f</a>
+
+                <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-icon instagram"
+                    aria-label="Instagram"
+                >◎</a>
+
+                <a
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-icon youtube"
+                    aria-label="YouTube"
+                >▶</a>
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-icon linkedin"
+                    aria-label="LinkedIn"
+                >in</a>
+
+            </div>
+
+            <p class="company-footer-copyright">© 2026 Goldman Seed Enterprise<br>All rights reserved</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | Goldman Seed Enterprise</title>
+
+    <link rel="stylesheet" href="style.css?v=10">
+    <script src="script.js?v=17" defer></script>
+</head>
+
+<body class="home-page profile-page" id="top">
+    <header class="site-header">
+        <a class="brand" href="home.html">
+            <img src="images/brand/logo.jpeg" alt="Goldman Seed Enterprise Logo" class="brand-logo">
+            <span class="brand-name">Goldman Seed Enterprise</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="product.html">Products</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <div class="account-links">
+            <a class="account-link" id="homeSignInLink" href="signin.html">Sign In</a>
+            <a class="account-link register-link" id="homeRegisterLink" href="register.html">Register</a>
+            <a class="signout-link" id="homeSignOutLink" href="signout.html" hidden>Sign Out ↗</a>
+            <a
+                class="profile-avatar-link"
+                id="homeProfileLink"
+                href="profile.html"
+                aria-label="Edit your account profile"
+                title="Edit your account profile"
+                hidden
+            ><img id="homeProfileAvatar" src="images/brand/logo.jpeg" alt="" aria-hidden="true"></a>
+        </div>
+    </header>
+
+    <main class="profile-main">
+        <section class="profile-card" aria-labelledby="profileTitle">
+            <p class="eyebrow">YOUR ACCOUNT</p>
+            <h1 id="profileTitle">My profile</h1>
+            <p class="profile-intro">Update your name, phone number, and profile picture.</p>
+
+            <form id="profileForm" class="profile-form" novalidate>
+                <label for="profileFullName">Full name</label>
+                <input
+                    id="profileFullName"
+                    name="full_name"
+                    type="text"
+                    maxlength="120"
+                    autocomplete="name"
+                    required
+                    aria-describedby="profileFullNameError"
+                >
+                <span id="profileFullNameError" class="field-error" role="alert" aria-live="polite"></span>
+
+                <label for="profileEmail">Email address</label>
+                <input id="profileEmail" name="email" type="email" readonly aria-describedby="profileEmailHelp">
+                <span id="profileEmailHelp" class="profile-field-help">Email address cannot be changed here.</span>
+
+                <label for="profilePhone">Phone number</label>
+                <input
+                    id="profilePhone"
+                    name="phone_no"
+                    type="tel"
+                    maxlength="30"
+                    autocomplete="tel"
+                    placeholder="+60 12-345 6789"
+                    aria-describedby="profilePhoneHelp profilePhoneError"
+                >
+                <span id="profilePhoneHelp" class="profile-field-help">Optional. Use digits, spaces, +, parentheses, or hyphens.</span>
+                <span id="profilePhoneError" class="field-error" role="alert" aria-live="polite"></span>
+
+                <fieldset class="profile-avatar-fieldset">
+                    <legend>Choose a profile picture</legend>
+                    <p class="profile-field-help">Choose one of these illustrated avatars. Image uploads are not supported.</p>
+                    <div id="profileAvatarOptions" class="profile-avatar-options"></div>
+                    <span id="profileAvatarError" class="field-error" role="alert" aria-live="polite"></span>
+                </fieldset>
+
+                <p id="profileMessage" class="form-message" role="status" aria-live="polite"></p>
+                <div class="profile-form-actions">
+                    <a class="secondary-button" href="home.html">Back to home</a>
+                    <button class="primary-button" id="saveProfileButton" type="submit" disabled>Save changes</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

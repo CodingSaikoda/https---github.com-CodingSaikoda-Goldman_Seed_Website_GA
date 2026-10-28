@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us | Goldman Seed Enterprise</title>
+
+    <link rel="stylesheet" href="style.css?v=contact-profile-3">
+    <script src="script.js?v=16" defer></script>
+</head>
+
+<body class="home-page contact-page" id="top">
+    <!--region -->
+    <header class="site-header">
+
+        <a class="brand" href="home.html">
+            <img
+                src="images/brand/logo.jpeg"
+                alt="Goldman Seed Enterprise Logo"
+                class="brand-logo"
+            >
+
+            <span class="brand-name">
+                Goldman Seed Enterprise
+            </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+            <a href="home.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="product.html">Products</a>
+            <a href="contact.html"
+               class="active"
+               aria-current="page">Contact</a>
+        </nav>
+
+        <!-- Account navigation -->
+        <div class="account-links">
+
+            <a
+                class="account-link"
+                id="homeSignInLink"
+                href="signin.html"
+            >Sign In</a>
+
+            <a
+                class="account-link register-link"
+                id="homeRegisterLink"
+                href="register.html"
+            >Register</a>
+
+            <a
+                class="signout-link"
+                id="homeSignOutLink"
+                href="signout.html"
+                hidden
+            >Sign Out ↗</a>
+
+            <a
+                class="profile-avatar-link"
+                id="homeProfileLink"
+                href="profile.html"
+                aria-label="Edit your account profile"
+                title="Edit your account profile"
+                hidden
+            ><img id="homeProfileAvatar" src="images/brand/logo.jpeg" alt="" aria-hidden="true"></a>
+
+        </div>
+
+    </header>
+    <!--region end -->
+
+    <main class="home-content contact-main">
+        <section class="contact-intro">
+            <p class="eyebrow">WE'RE HERE TO HELP</p>
+            <h1>Contact Goldman Seed Enterprise</h1>
+            <p>Share your feedback, ask about our fresh produce, or get in touch with our team.</p>
+        </section>
+
+        <div class="contact-layout">
+            <div class="contact-details-column">
+                <section class="contact-card contact-details" aria-labelledby="contact-details-title">
+                    <p class="eyebrow">Get in Touch</p>
+                    <h2 id="contact-details-title">We would love to hear from you.</h2>
+                    <p class="contact-card-description">
+                        Whether you are interested in our fresh produce, business partnerships, supply opportunities,
+                        or would simply like to know more about Goldman Seed Enterprise, feel free to contact us.
+                    </p>
+
+                    <div class="contact-method">
+                        <span class="contact-method-icon contact-method-logo" aria-hidden="true">
+                            <img src="images/brand/logo.jpeg" alt="">
+                        </span>
+                        <div>
+                            <h3>Goldman Seed Enterprise</h3>
+                            <span>Sarawak, Malaysia</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <span class="contact-method-icon contact-method-whatsapp" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" focusable="false">
+                                <path d="M12 2a9.7 9.7 0 0 0-8.3 14.7L2.4 22l5.5-1.4A10 10 0 1 0 12 2Zm0 17.8a8 8 0 0 1-4.1-1.1l-.3-.2-3.2.8.8-3.1-.2-.3A7.8 7.8 0 1 1 12 19.8Zm4.4-5.9c-.2-.1-1.4-.7-1.6-.8s-.4-.1-.5.1-.6.8-.8.9-.3.2-.5.1a6.4 6.4 0 0 1-1.9-1.2 7.2 7.2 0 0 1-1.3-1.6c-.1-.2 0-.3.1-.4l.4-.5.2-.4v-.4c-.1-.1-.5-1.3-.7-1.8-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3s-.8.8-.8 1.9.8 2.2.9 2.4a9 9 0 0 0 3.5 3.2c.5.2.9.4 1.2.5.5.2 1 .2 1.4.1.4-.1 1.4-.6 1.6-1.1s.2-1 .2-1.1-.2-.2-.4-.3Z"/>
+                            </svg>
+                        </span>
+                        <div>
+                            <h3>WhatsApp</h3>
+                            <a href="https://wa.me/60128331638" target="_blank" rel="noopener noreferrer">+60 12 833 1638</a><br>
+                            <a href="https://wa.me/60168819638" target="_blank" rel="noopener noreferrer">+60 16 881 9638</a>
+                        </div>
+                    </div>
+
+                    <p class="contact-card-description contact-tagline">Fresh. Safe. Reliable. Every Day.</p>
+                </section>
+
+                <div class="contact-community-visual">
+                    <img
+                        src="images/contact/sarawak-community-hd.jpg"
+                        alt="Misty mountain lake at sunrise"
+                        class="contact-community-image"
+                        width="1600"
+                        height="1067"
+                        loading="lazy"
+                    >
+                    <p class="contact-community-caption">
+                        From Sarawak<br>
+                        To Brighter Communities
+                    </p>
+                </div>
+            </div>
+
+            <section class="contact-card contact-form-card" aria-labelledby="feedback-title">
+                <p class="eyebrow">YOUR FEEDBACK</p>
+                <h2 id="feedback-title">Send us a message</h2>
+                <p class="contact-card-description">
+                    Send your message directly to our team. We will save it so we can follow up.
+                </p>
+
+                <form id="contactForm" class="contact-form" novalidate>
+                    <label for="contactName">Your name</label>
+                    <input id="contactName" name="name" type="text" autocomplete="name" maxlength="120" aria-describedby="contactNameError" required>
+                    <p id="contactNameError" class="field-error" aria-live="polite"></p>
+
+                    <label for="contactEmail">Email address</label>
+                    <input id="contactEmail" name="email" type="email" autocomplete="email" maxlength="254" aria-describedby="contactEmailError" required>
+                    <p id="contactEmailError" class="field-error" aria-live="polite"></p>
+
+                    <label for="contactMessage">Message or feedback</label>
+                    <textarea id="contactMessage" name="message" rows="5" maxlength="5000" aria-describedby="contactMessageError" required></textarea>
+                    <p id="contactMessageError" class="field-error" aria-live="polite"></p>
+
+                    <button class="primary-button" type="submit">Send message</button>
+                    <p id="contactFeedback" class="form-message" role="status" aria-live="polite"></p>
+                </form>
+            </section>
+        </div>
+
+        <section id="adminContactInbox" class="admin-inbox contact-card" aria-labelledby="adminContactInboxTitle" hidden>
+            <div class="admin-panel-heading">
+                <div>
+                    <p class="eyebrow">ADMINISTRATION</p>
+                    <h2 id="adminContactInboxTitle">Customer messages</h2>
+                </div>
+                <button id="refreshContactMessages" class="secondary-button" type="button">Refresh messages</button>
+            </div>
+            <p id="contactMessagesStatus" class="form-message" role="status" aria-live="polite"></p>
+            <div id="contactMessagesList" class="admin-record-list" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <!--region =================================
+         COMPANY FOOTER
+    ================================== -->    
+    <footer class="company-footer">
+        <div class="company-footer-inner">
+            <a class="company-footer-brand" href="home.html">
+                <img src="images/brand/logo.jpeg" alt="Goldman Seed Enterprise Logo" class="company-footer-logo">
+                <span class="company-footer-name">
+                    <strong>Goldman Seed Enterprise</strong>
+                    <small>Fresh Produce for a Healthier Sarawak</small>
+                </span>
+            </a>
+            <nav class="company-footer-nav" aria-label="Footer navigation">
+                <a href="home.html">Home</a><span class="footer-separator">|</span>
+                <a href="about.html">About</a><span class="footer-separator">|</span>
+                <a href="product.html">Products</a><span class="footer-separator">|</span>
+                <a href="contact.html">Contact</a>
+            </nav>
+
+            <!-- Social media -->
+            <div class="company-footer-social">
+
+                <a
+                    href="https://www.facebook.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-icon facebook"
+                    aria-label="Facebook"
+                >f</a>
+
+                <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-icon instagram"
+                    aria-label="Instagram"
+                >◎</a>
+
+                <a
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-icon youtube"
+                    aria-label="YouTube"
+                >▶</a>
+
+                <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-icon linkedin"
+                    aria-label="LinkedIn"
+                >in</a>
+
+            </div>
+
+            <p class="company-footer-copyright">© 2026 Goldman Seed Enterprise<br>All rights reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
